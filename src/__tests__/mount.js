@@ -14,5 +14,5 @@ test("Home component", async () => {
 
   await fireEvent.click(buttonElement) // click on button
 
-  // getByText("Please enter your email and password"); // Check exact textmatch error message in been display in the compoenent
+  getByText("Please enter your email and password"); // Check exact textmatch error message in been display in the compoenent
 })
