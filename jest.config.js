@@ -1,15 +1,12 @@
-module.exports =  {
-    "moduleFileExtensions": [
-        "js",
-        "json",
-        // tell Jest to handle `*.vue` files
-        "vue"
-    ],
-    "transform": {
-        ".*\\.(js)$": "babel-jest",
-        // process `*.vue` files with `vue-jest`
-        ".*\\.(vue)$": "vue-jest"
-    },
-    "testEnvironment": "jsdom"
+module.exports = {
+  moduleFileExtensions: [
+    "js",
+    "json",
+    "vue"
+  ],
+  transform: {
+    ".*\\.(js)": "babel-jest",
+    ".*\\.(vue)": "vue-jest",
+  },
+  testEnvironment: "jsdom"
 }
-  

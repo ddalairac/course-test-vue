@@ -1,17 +1,18 @@
 /* eslint-disable no-undef */
-import { render, fireEvent } from '@testing-library/vue';
+import { render, fireEvent } from "@testing-library/vue";
 import Home from "../views/Home.vue";
 
-test('Render Home', async () => {
-    // The render method returns a collection of utilities to query your component.
-    const { getByText } = render(Home);
+// test("testing components", () => {
+//   render(Home) // component is mounted
+// })
+test("Home component", async () => {
+  const { getByText } = render(Home);
 
-    getByText("Login to your account");
+  getByText("Login to your account"); // Check exact textmatch in the compoenent
 
-    const loginButton = getByText('Login');
+  const buttonElement = getByText("Login"); // Get button element
 
-    await fireEvent.click(loginButton);
+  await fireEvent.click(buttonElement) // click on button
 
-    getByText("Please enter your email and password");
-
+  // getByText("Please enter your email and password"); // Check exact textmatch error message in been display in the compoenent
 })
