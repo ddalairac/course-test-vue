@@ -1,39 +1,32 @@
-/* eslint-disable no-undef */
-import { addNumbers, countriesCollection, johnDoe } from '../utilities';
+import {addNumbers, countriesCollection, johnDoe} from "../utilities";
 
-describe("Unit test", () => {
-  describe("Test strings", () => {
-    test("Find Substring", () => {
-      expect("it's raining cats & dogs").toMatch(/dogs/);
-    });
-    test("Test description", () => {
-      expect("the thing to be tested").toMatch(/thing/);
-    });
+describe("Unit Tests", () => {
 
-  })
-  describe("Test Addition", () => {
-    test("Addition ", () => {
-      expect(4+5).toEqual(9);
-    });
-    test("Check addition number", () => {
-      expect(addNumbers(4, 5)).toEqual(9);
-    });
-    test("Adding float number", () => {
-      expect(addNumbers(0.4, 0.5)).toEqual(0.9);
-    });
-    test("Adding float number", () => {
-      expect(addNumbers(0.1, 0.2)).toBeCloseTo(0.3);
-    });
-  })
-  describe("Test objects", () => {
-    test("Check available countries", () => {
-      expect(countriesCollection).toContain('Australia');
+    describe("Testing Strings", () => {
+        test ("Find dogs", () => {
+            expect("It's raining cats and dogs").toMatch(/dogs/);
+        })
     })
-    test("Check user info", () => {
-      expect(johnDoe).toEqual(expect.objectContaining({
-        name: 'John Doe',
-        age: 30,
-      }));
+
+    describe("Testing Arrays and Objects", () => {
+        test ("Check available countries", () => {
+            expect(countriesCollection).toContain('Nigeria');
+        })
+        
+        test ("Check user info", () => {
+            expect(johnDoe).toEqual(expect.objectContaining({age : 26, occupation : "Accountant"}));
+        })
     })
-  })
+
+    describe("Testing Numeric Values", () => {
+        test ("check the addition of numbers", () => {
+            expect(addNumbers(4, 5)).toEqual(9);
+        })
+
+        test ("adding floating point numbers", () => {
+            expect(addNumbers(0.1, 0.2)).toBeCloseTo(0.3);
+        })
+    })
+
+    
 })

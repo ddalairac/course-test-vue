@@ -1,12 +1,9 @@
-/* eslint-disable no-undef */
-import { countriesCollection, johnDoe } from '../utilities';
-test("Check available countries", () => {
-  expect(countriesCollection).toContain('Australia');
+import {countriesCollection, johnDoe} from "../utilities";
+
+test ("Check available countries", () => {
+    expect(countriesCollection).toContain('Nigeria');
 })
 
-test("Check user info", () => {
-  expect(johnDoe).toEqual(expect.objectContaining({
-    name: 'John Doe',
-    age: 30,
-  }));
+test ("Check user info", () => {
+    expect(johnDoe).toEqual(expect.objectContaining({age : 26, occupation : "Accountant"}));
 })

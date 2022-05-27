@@ -26,18 +26,21 @@
                     </div>
 
                     <div class="card-body">
+                      <div v-if="showError" class="alert alert-danger" role="alert">
+                        Please enter your email and password
+                      </div>
                       <form>
                         <div>
                           <div class="form-group">
-                            <input type="email" placeholder="Enter Email" class="form-control">
+                            <input v-model="email" type="email" placeholder="Enter Email" class="form-control login-email">
                           </div>
                           <div class="form-group">
-                            <input type="password" placeholder="Enter Password" class="form-control">
+                            <input v-model="password" type="password" placeholder="Enter Password" class="form-control login-password">
                           </div>
-                          <button type="button" class="btn btn-primary" @click="login()">
+                          <button type="button" class="btn btn-primary login-button" @click="login()">
                             Login
                           </button>
-                        </div>
+                        </div> 
                       </form>
                     </div>
                     
@@ -59,12 +62,71 @@
 
 export default {
   name: 'Home',
+  data(){
+    return {
+      email : null,
+      password : null,
+      showError : false
+    }
+  },
   components: {
     
   },
   methods : {
     login(){
-      this.$router.push({path : "profile"})
+      if(this.email && this.password){
+
+        let user = {
+            name: "John Doe",
+            email: "john@doe.com",
+            phone: "(239) 816-8855",
+            mobile: "(320) 380-2134",
+            address: "Bay Area, San Francisco, CA",
+            occupation: "Life-style Blogger",
+            tours : [
+                {
+                    title : "Los Angeles",
+                    value : 80
+                },
+                {
+                    title : "San Francisco",
+                    value : 72
+                },
+                {
+                    title : "San Diego",
+                    value : 89
+                },
+                {
+                    title : "San Bernardino",
+                    value : 55
+                },
+                {
+                    title : "Sacramento",
+                    value : 66
+                }
+            ],
+            breakdown: {
+                total : 15,
+                completed : 8,
+                pending : 5,
+                commute : "Bus"
+            },
+            socials : {
+                web: "https://johndoey.com",
+                twitter : "@johndoey",
+                instagram : "johndoey",
+                facebook : "johndoey"
+            }
+
+        }
+
+        this.$store.commit("setUser", user);
+
+        this.$router.push({path : "profile"});
+      }else{
+        this.showError = true;
+      }
+      
     }
   }
 }

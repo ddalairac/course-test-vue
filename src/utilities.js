@@ -1,37 +1,33 @@
 function addNumbers(a, b) {
-  return a + b;
+    return a + b;
 }
 
 let countriesCollection = [
-  'Argentina',
-  'Australia',
-  'Austria',
-  'Belgium',
-  'Brazil',
-  'Canada',
-  'Chile',
-  'China',
+    'United States',
+    'United Kingdom',
+    'Nigeria',
+    'India',
+    'China'
 ]
 
 let johnDoe = {
-  name: 'John Doe',
-  age: 30,
-  country: 'United States',
-  hobbies: ['music', 'sports']
+    name: "John Doe",
+    age: 26,
+    sex : "male",
+    occupation: "Accountant"
 }
 
-function asyncPrint(){
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve('Async Hello World');
-    }, 1000);
-  })
+function asyncPrint() {
+    return new Promise((resolve, reject) => {
+        setTimeout(()=> {
+            resolve("Hello World");
+        }, 2000)
+    })
 }
 
 module.exports = {
-  addNumbers,
-  countriesCollection,
-  johnDoe,
-  asyncPrint,
+    addNumbers,
+    countriesCollection,
+    johnDoe,
+    asyncPrint
 }
-

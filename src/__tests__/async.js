@@ -1,10 +1,12 @@
 /* eslint-disable no-undef */
-import { asyncPrint } from '../utilities'
-test("Test then func", () => {
-  return asyncPrint().then(data => {
-    expect(data).toBe('Async Hello World');
-  })
-})
-test("Test async func", async() => {
-    await expect(asyncPrint()).resolves.toBe('Async Hello World');
+import {asyncPrint} from "../utilities";
+
+/* test ("Test asynchronous printing", () => {
+    return asyncPrint().then(data => {
+        expect(data).toBe("Hello World");
+    })
+}) */
+
+test ("Test asynchronous printing", async () => {
+    await expect(asyncPrint()).resolves.toBe("Hello World");
 })

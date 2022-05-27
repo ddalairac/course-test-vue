@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
-test("Find Substring", () => {
-  expect("it's raining cats & dogs").toMatch(/dogs/);
-});
+test ("Find dogs", () => {
+    expect("It's raining cats and dogs").toMatch(/dogs/);
+})
