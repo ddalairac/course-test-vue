@@ -1,4 +1,7 @@
-import {asyncPrint} from "../utilities";
+/* eslint-disable no-undef */
+import { asyncPrint } from "../utilities";
+
+// Las 2 formas son válidas, solo cambia la sintaxis
 
 /* test ("Test asynchronous printing", () => {
     return asyncPrint().then(data => {
@@ -6,6 +9,6 @@ import {asyncPrint} from "../utilities";
     })
 }) */
 
-test ("Test asynchronous printing", async () => {
-    await expect(asyncPrint()).resolves.toBe("Hello World");
+test("Test asynchronous printing", async () => {
+  await expect(asyncPrint()).resolves.toBe("Hello World");
 })
