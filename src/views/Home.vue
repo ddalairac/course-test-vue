@@ -32,10 +32,10 @@
                       <form>
                         <div>
                           <div class="form-group">
-                            <input v-model="email" type="email" placeholder="Enter Email" class="form-control login-email">
+                            <input v-model="email" type="email" placeholder="Enter Email" class="form-control login-email" id="email">
                           </div>
                           <div class="form-group">
-                            <input v-model="password" type="password" placeholder="Enter Password" class="form-control login-password">
+                            <input v-model="password" type="password" placeholder="Enter Password" class="form-control login-password" id="password">
                           </div>
                           <button type="button" class="btn btn-primary login-button" @click="login()">
                             Login

@@ -7,12 +7,12 @@ import Home from "../views/Home.vue";
 // })
 test("Home component", async () => {
   const { getByText } = render(Home);
-
-  getByText("Login to your account"); // Check exact textmatch in the compoenent
-
+ 
+  getByText("Login to your account"); // Check exact text match in the component
+  
   const buttonElement = getByText("Login"); // Get button element
-
+  
   await fireEvent.click(buttonElement) // click on button
-
-  getByText("Please enter your email and password"); // Check exact textmatch error message in been display in the compoenent
+  
+  getByText("Please enter your email and password"); // Check exact text match error message displayed in the component
 })
